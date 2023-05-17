@@ -10,3 +10,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 # Añadido por Javier Guillén el 11-05-2023
 
+# Se modifica archivo src/requirements.txt determinando versión de librerías 'urllib3<2'
