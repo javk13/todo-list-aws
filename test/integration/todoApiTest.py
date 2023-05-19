@@ -8,7 +8,7 @@ import json
 import pytest
 
 BASE_URL = os.environ.get("BASE_URL")
-#BASE_URL = "https://m0qwfec693.execute-api.us-east-1.amazonaws.com/Prod"
+BASE_URL = "https://ds2wk9e4jg.execute-api.us-east-1.amazonaws.com/Prod"
 print(BASE_URL)
 DEFAULT_TIMEOUT = 2  # in secs
 
@@ -17,8 +17,8 @@ DEFAULT_TIMEOUT = 2  # in secs
 class TestApi(unittest.TestCase):
     
     def setUp(self):
-        self.assertIsNotNone(BASE_URL, "URL no configurada")
-        self.assertTrue(len(BASE_URL) > 8, "URL no configurada")
+        self.assertIsNotNone(BASE_URL, "https://ds2wk9e4jg.execute-api.us-east-1.amazonaws.com/Prod")
+        self.assertTrue(len(BASE_URL) > 8, "https://ds2wk9e4jg.execute-api.us-east-1.amazonaws.com/Prod")
 
     def test_api_listtodos(self):
         print('---------------------------------------')
