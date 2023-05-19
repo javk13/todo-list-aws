@@ -13,9 +13,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 # Se modifica archivo src/requirements.txt determinando versión de librerías 'urllib3<2'
 
 # samconfig.toml - añado parámetros en 
-# staging]
-# [staging.deploy]
-# [staging.deploy.parameters]
+ staging]
+ [staging.deploy]
+ [staging.deploy.parameters]
 
 confirm_changeset = true
 s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1tp93onkchp8k"
@@ -31,3 +31,28 @@ BASE_URL = "https://ds2wk9e4jg.execute-api.us-east-1.amazonaws.com/Prod"
 # Modificación todoApiTest.py2:
 BASE_URL = os.environ.get("https://ds2wk9e4jg.execute-api.us-east-1.amazonaws.com/Prod")
 #BASE_URL = "https://ds2wk9e4jg.execute-api.us-east-1.amazonaws.com/Prod"
+
+# todoApiTest queda:
+BASE_URL = os.environ.get("BASE_URL")
+BASE_URL = "https://ds2wk9e4jg.execute-api.us-east-1.amazonaws.com/Prod"
+
+(Quizás innecesario)
+def setUp(self):
+        self.assertIsNotNone(BASE_URL, "https://ds2wk9e4jg.execute-api.us-east-1.amazonaws.com/Prod")
+        self.assertTrue(len(BASE_URL) > 8, "https://ds2wk9e4jg.execute-api.us-east-1.amazonaws.com/Prod")
+        
+Configuro variable entorno defaulr a staging...
+Funciona correctamente.
+
+# Mergeo de rama feature con develop
+
+# PIPELINE-FULL-SATAGING termina correctamente sin aumento en calidad del código.
+(catchError(buildResult: 'UNSTABLE', stageResult: 'FAILURE') {)  (Para continuar si hubiese filtro calidad)
+
+# samconfig.toml - añado parámetros en:
+[production] 
+[production.deploy] 
+[production.deploy.parameters]
+
+confirm_changeset = true \n 
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1tp93onkchp8k"
