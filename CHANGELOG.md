@@ -19,3 +19,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 confirm_changeset = true
 s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1tp93onkchp8k"
+
+
+# Modificación todoApiTest.py:
+
+BASE_URL = os.environ.get("BASE_URL")
+#BASE_URL = "https://m0qwfec693.execute-api.us-east-1.amazonaws.com/Prod"
+
+BASE_URL = os.environ.get("BASE_URL")
+BASE_URL = "https://ds2wk9e4jg.execute-api.us-east-1.amazonaws.com/Prod"
