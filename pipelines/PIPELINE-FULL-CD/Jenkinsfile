@@ -11,6 +11,7 @@ pipeline {
         }
         stage('Merge'){
             steps{
+                echo 'Credencial ssh'
                 sh script: """
                     set -x
                     git branch -a
@@ -18,7 +19,7 @@ pipeline {
                     git checkout -b master origin/master
                     git merge develop
                 """, label: "Merging code to master"
-                echo 'Credencial ssh'
+               
                 sshagent(credentials: ['jenkinsawsunir']) {
                     sh "git push origin master"
                 }
