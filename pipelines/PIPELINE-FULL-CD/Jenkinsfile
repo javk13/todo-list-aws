@@ -19,7 +19,7 @@ pipeline {
                     git merge develop
                 """, label: "Merging code to master"
                 echo 'Credencial ssh'
-                sshagent(credentials: ['ssh-credentials-id']) {
+                sshagent(credentials: ['jenkinsawsunir']) {
                     sh "git push origin master"
                 }
 
