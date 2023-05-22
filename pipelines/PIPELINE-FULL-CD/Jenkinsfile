@@ -20,7 +20,7 @@ pipeline {
                     git merge develop
                 """, label: "Merging code to master"
                
-                sshagent(['javk13/todo-list-aws']) {
+                sshagent(['javk13']) {
                     sh "git push origin master"
                 }
 
