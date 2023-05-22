@@ -11,7 +11,8 @@ pipeline {
         }
         stage('Merge'){
             steps{
-                echo 'Credencial ssh'
+                catchError(buildResult: 'UNSTABLE', stageResult: 'FAILURE') {
+                echo 'Esto es una mierda'
                 sh script: """
                     set -x
                     git branch -a
