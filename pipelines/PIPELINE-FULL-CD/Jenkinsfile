@@ -11,6 +11,8 @@ pipeline {
         }
         stage('Merge'){
             steps{
+                catchError(buildResult: 'UNSTABLE', stageResult: 'FAILURE') {
+                echo 'Esto es una mierda'
                 sh script: """
                     set -x
                     git branch -a
@@ -18,10 +20,11 @@ pipeline {
                     git checkout -b master origin/master
                     git merge develop
                 """, label: "Merging code to master"
-                sshagent(['github']) {
+               
+                sshagent(['JenkinsAws']) {
                     sh "git push origin master"
+                    }
                 }
-
             }
         }
         stage('Production'){
