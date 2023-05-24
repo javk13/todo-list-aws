@@ -59,5 +59,5 @@ s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1tp93onkchp8k"
 
 # Configuración de conexión por ssh para pipeline full cd.
 # Configuración WebHook.
-# Comprobación funcionamiento
+# Comprobación funcionamiento.
 
