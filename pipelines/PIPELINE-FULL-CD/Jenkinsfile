@@ -12,7 +12,7 @@ pipeline {
         stage('Merge'){
             steps{
                 catchError(buildResult: 'UNSTABLE', stageResult: 'FAILURE') {
-                echo 'Esto es una mierda'
+                echo 'Esto empieza a funcionar'
                 sh script: """
                     set -x
                     git branch -a
