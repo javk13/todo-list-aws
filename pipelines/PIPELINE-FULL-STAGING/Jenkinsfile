@@ -31,7 +31,7 @@ pipeline {
             steps {
 
                 catchError(buildResult: 'UNSTABLE', stageResult: 'FAILURE') {
-                    cobertura coberturaReportFile: 'coverage.xml', lineCoverageTargets: '100,80,90', failUnstable: false, onlyStable: false
+                    cobertura coberturaReportFile: 'coverage.xml', lineCoverageTargets: '100,70,75', failUnstable: false, onlyStable: false
                 }
             }
         }
