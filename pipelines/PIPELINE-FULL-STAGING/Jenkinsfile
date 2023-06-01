@@ -27,6 +27,14 @@ pipeline {
                 }
             }
         }
+        stage('Coverage') {
+            steps {
+
+                catchError(buildResult: 'UNSTABLE', stageResult: 'FAILURE') {
+                    cobertura coberturaReportFile: 'coverage.xml', lineCoverageTargets: '100,80,90', failUnstable: false, onlyStable: false
+                }
+            }
+        }
        stage('Build') {
             steps{
                 echo 'Package sam application:'
