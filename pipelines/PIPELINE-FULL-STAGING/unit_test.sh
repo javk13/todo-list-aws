@@ -10,5 +10,3 @@ pip show coverage
 coverage run --include=src/todoList.py test/unit/TestToDo.py
 coverage report
 coverage xml
-junit 'result*.xml'
-cobertura coberturaReportFile: 'coverage.xml'
